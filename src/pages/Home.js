@@ -8,7 +8,7 @@ const Home = ({ posts }) => {
           <div className={styles.postHeader}>
             <div className={styles.postAvatar}>
               <img
-                src="https://image.flaticon.com/icons/svg/2154/2154651.svg"
+                src="https://media.istockphoto.com/id/1300845620/vector/user-icon-flat-isolated-on-white-background-user-symbol-vector-illustration.jpg?s=612x612&w=0&k=20&c=yBeyba0hUkh14_jgv1OKqIH0CCSWU_4ckRkAoy2p73o="
                 alt="user-pic"
               />
               <div>
@@ -21,7 +21,7 @@ const Home = ({ posts }) => {
             <div className={styles.postActions}>
               <div className={styles.postLike}>
                 <img
-                  src="https://image.flaticon.com/icons/svg/1077/1077035.svg"
+                  src="https://www.shutterstock.com/image-vector/like-icon-hand-thumb-up-260nw-1356361679.jpg"
                   alt="likes-icon"
                 />
                 <span>5</span>
