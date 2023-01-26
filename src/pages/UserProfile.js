@@ -1,4 +1,4 @@
-import { useParams, useHistory } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import { useToasts } from 'react-toast-notifications';
 
 import { Loader } from '../components';
@@ -13,7 +13,7 @@ const UserProfile = () => {
   const [requestInProgress, setRequestInProgress] = useState(false);
   const { userId } = useParams();
   const { addToast } = useToasts();
-  const history = useHistory();
+  const history = useNavigate();
   const auth = useAuth();
 
   useEffect(() => {

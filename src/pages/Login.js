@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Redirect } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
 import { useToasts } from 'react-toast-notifications';
 
 import styles from '../styles/login.module.css';
@@ -38,7 +38,7 @@ const Login = () => {
   };
 
   if (auth.user) {
-    return <Redirect to="/" />;
+    return <Navigate to="/" />;
   }
 
   return (

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useHistory, Redirect } from 'react-router-dom';
+import { useNavigate, Navigate } from 'react-router-dom';
 import { useToasts } from 'react-toast-notifications';
 
 import { useAuth } from '../hooks';
@@ -13,7 +13,7 @@ const Signup = () => {
   const [signingUp, setSigningUp] = useState('');
   const { addToast } = useToasts();
   const auth = useAuth();
-  const history = useHistory();
+  const history = useNavigate();
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
@@ -62,7 +62,7 @@ const Signup = () => {
   };
 
   if (auth.user) {
-    return <Redirect to="/" />;
+    return <Navigate to="/" />;
   }
 
   return (

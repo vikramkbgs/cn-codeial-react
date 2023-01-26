@@ -1,8 +1,8 @@
 import {
   BrowserRouter as Router,
   Route,
-  Switch,
-  Redirect,
+  Navigate,
+  Routes,
 } from 'react-router-dom';
 
 import { useAuth } from '../hooks';
@@ -11,7 +11,6 @@ import { Loader, Navbar } from './';
 
 function PrivateRoute({ children, ...rest }) {
   const auth = useAuth();
-
   return (
     <Route
       {...rest}
@@ -19,8 +18,7 @@ function PrivateRoute({ children, ...rest }) {
         if (auth.user) {
           return children;
         }
-
-        return <Redirect to="/login" />;
+        return <Navigate to="/login" />;
       }}
     />
   );
@@ -42,31 +40,14 @@ function App() {
     <div className="App">
       <Router>
         <Navbar />
-        <Switch>
-          <Route exact path="/">
-            <Home />
-          </Route>
-
-          <Route exact path="/login">
-            <Login />
-          </Route>
-
-          <Route exact path="/register">
-            <Signup />
-          </Route>
-
-          <PrivateRoute exact path="/settings">
-            <Settings />
-          </PrivateRoute>
-
-          <PrivateRoute exact path="/user/:userId">
-            <UserProfile />
-          </PrivateRoute>
-
-          <Route>
-            <Page404 />
-          </Route>
-        </Switch>
+        <Routes>
+          <Route exact path="/" element={<Home />}></Route>
+          <Route exact path="/login" element={<Login />}></Route>
+          <Route exact path="/register" element={<Signup />}></Route>
+          <PrivateRoute  exact path="/settings" element={<Settings />}></PrivateRoute>
+          <PrivateRoute  exact path="/user/:userId" element={<UserProfile />}></PrivateRoute>
+          <Route path="*" element={<Page404 />}></Route>
+        </Routes>
       </Router>
     </div>
   );
