@@ -7,7 +7,7 @@ const Home = () => {
         <div className={styles.postHeader}>
           <div className={styles.postAvatar}>
             <img
-              src="https://image.flaticon.com/icons/svg/2154/2154651.svg"
+              src="https://media.istockphoto.com/id/1300845620/vector/user-icon-flat-isolated-on-white-background-user-symbol-vector-illustration.jpg?s=612x612&w=0&k=20&c=yBeyba0hUkh14_jgv1OKqIH0CCSWU_4ckRkAoy2p73o="
               alt="user-pic"
             />
             <div>
@@ -20,7 +20,7 @@ const Home = () => {
           <div className={styles.postActions}>
             <div className={styles.postLike}>
               <img
-                src="https://image.flaticon.com/icons/svg/1077/1077035.svg"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBttCCpvTzDbMyz3FMGx-T9xvDeAgbhkMDI3BDPtSv65WsXkchIT82iiqXd2P7Sr0EGzI&usqp=CAU"
                 alt="likes-icon"
               />
               <span>5</span>
@@ -28,7 +28,7 @@ const Home = () => {
 
             <div className={styles.postCommentsIcon}>
               <img
-                src="https://image.flaticon.com/icons/svg/1380/1380338.svg"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ16jvNKXnk5jRR2MzirmwvqOwxGtB-LsUAyk7LaQhNVcCJ1wy1P6l6JQgp5sQMcRJUYNc&usqp=CAU"
                 alt="comments-icon"
               />
               <span>2</span>
