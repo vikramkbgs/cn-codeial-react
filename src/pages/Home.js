@@ -1,8 +1,10 @@
 import PropTypes from 'prop-types';
 
+import { Comment } from '../components';
 import styles from '../styles/home.module.css';
 
 const Home = ({ posts }) => {
+  console.log(posts);
   return (
     <div className={styles.postsList}>
       {posts.map((post) => (
@@ -34,7 +36,7 @@ const Home = ({ posts }) => {
                   src="https://image.flaticon.com/icons/svg/1380/1380338.svg"
                   alt="comments-icon"
                 />
-                <span>2</span>
+                <span>{post.comments.length}</span>
               </div>
             </div>
             <div className={styles.postCommentBox}>
@@ -42,15 +44,9 @@ const Home = ({ posts }) => {
             </div>
 
             <div className={styles.postCommentsList}>
-              <div className={styles.postCommentsItem}>
-                <div className={styles.postCommentHeader}>
-                  <span className={styles.postCommentAuthor}>Bill</span>
-                  <span className={styles.postCommentTime}>a minute ago</span>
-                  <span className={styles.postCommentLikes}>22</span>
-                </div>
-
-                <div className={styles.postCommentContent}>Random comment</div>
-              </div>
+              {post.comments.map((comment) => (
+                <Comment comment={comment} />
+              ))}
             </div>
           </div>
         </div>
