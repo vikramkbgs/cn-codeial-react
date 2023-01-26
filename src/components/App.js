@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import { getPosts } from '../api';
 import { Home, Login } from '../pages';
@@ -43,13 +43,27 @@ function App() {
     <div className="App">
       <Router>
         <Navbar />
-        <Routes>
-          <Route exact path="/" element={<Home posts={posts} />}></Route>
-          <Route exact path="/login" element={<Login />}></Route>
-          <Route exact path="/about" element={<About />}></Route>
-          <Route exact path="/user/asdasd" element={<UserInfo />}></Route>
-          <Route path='*' element={<Page404 />}></Route>
-        </Routes>
+        <Switch>
+          <Route exact path="/">
+            <Home posts={posts} />
+          </Route>
+
+          <Route exact path="/login">
+            <Login />
+          </Route>
+
+          <Route exact path="/about">
+            <About />
+          </Route>
+
+          <Route exact path="/user/asdasd">
+            <UserInfo />
+          </Route>
+
+          <Route>
+            <Page404 />
+          </Route>
+        </Switch>
       </Router>
     </div>
   );
