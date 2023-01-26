@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 import { useAuth } from '../hooks';
 import { Home, Login, Signup } from '../pages';
@@ -19,23 +19,12 @@ function App() {
     <div className="App">
       <Router>
         <Navbar />
-        <Switch>
-          <Route exact path="/">
-            <Home />
-          </Route>
-
-          <Route exact path="/login">
-            <Login />
-          </Route>
-
-          <Route exact path="/register">
-            <Signup />
-          </Route>
-
-          <Route>
-            <Page404 />
-          </Route>
-        </Switch>
+        <Routes>
+          <Route exact path="/" element={<Home/>}></Route>
+          <Route exact path="/login" element={<Login />}></Route>
+          <Route exact path="/register" element={<Signup/>}></Route>
+          <Route path="*" element={<Page404 />}></Route>
+        </Routes>
       </Router>
     </div>
   );
